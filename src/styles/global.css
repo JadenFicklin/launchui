@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    --theme-50: 204deg 100% 97%;
+    --theme-100: 204deg 94% 94%;
+    --theme-200: 201deg 94% 86%;
+    --theme-300: 199deg 95% 74%;
+    --theme-400: 198deg 93% 60%;
+    --theme-500: 199deg 89% 48%;
+    --theme-600: 200deg 98% 39%;
+    --theme-700: 201deg 96% 32%;
+    --theme-800: 201deg 90% 27%;
+    --theme-900: 202deg 80% 24%;
+    --theme-950: 204deg 80% 16%;
+
+    --mono-base: 0deg 0% 100%;
+    --mono-50: 0deg 0% 98%;
+    --mono-100: 0deg 0% 96%;
+    --mono-200: 0deg 0% 90%;
+    --mono-300: 0deg 0% 83%;
+    --mono-400: 0deg 0% 64%;
+    --mono-500: 0deg 0% 45%;
+    --mono-600: 0deg 0% 32%;
+    --mono-700: 0deg 0% 25%;
+    --mono-800: 0deg 0% 15%;
+    --mono-900: 0deg 0% 9%;
+    --mono-950: 0deg 0% 4%;
+    --mono-full: 0deg 0% 0%;
+
+    --script: 0deg 0% 11%;
+  }
+
+  body {
+    @apply bg-white text-script transition-colors dark:bg-neutral-900;
+    @apply selection:bg-theme-400 selection:text-white;
+    @apply font-montserrat;
+  }
+
+  body::before {
+    @apply fixed left-0 top-0 z-[-100] h-full w-full;
+    @apply bg-theme-50/25 transition-colors duration-150 dark:bg-theme-50/5;
+    content: '';
+  }
+}
+
+@layer utilities {
+  .ringed {
+    @apply ring-2 ring-theme-500 ring-offset-2 ring-offset-mono-base;
+  }
+}
